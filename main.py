@@ -34,7 +34,7 @@ solution(None) # should return []
 def solution(nums):
     return [] if nums == None else sorted(nums)
 
-#Better answer:
+#Better answer: a
 def solution(nums):
     return sorted(nums) if nums else []
 
