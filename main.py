@@ -56,3 +56,48 @@ def find_next_square(sq):
         return (math.sqrt(sq) + 1) ** 2
 
 #------------------- 4 ----------------------------------
+
+
+
+'''
+Digital root is the recursive sum of all the digits in a number.
+
+Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+
+
+'''
+
+def digital_root(n):
+    answer = 0
+    if n < 10:
+        return n
+    while True:
+        for x in str(n):
+            answer += int(x)
+        n = answer
+        if answer <= 9:
+            break
+        answer = 0
+    return answer
+
+'''
+Other Answers:
+
+def digital_root(n):
+    return n if n < 10 else digital_root(sum(map(int,str(n))))
+
+
+def digital_root(n):
+    return n%9 or n and 9 
+
+
+def digital_root(n):
+    j = 0
+    while n > 9:
+        for i in str(n):
+            j += int(i)
+        n = j
+        j = 0
+    return n
+
+'''
